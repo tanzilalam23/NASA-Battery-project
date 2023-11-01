@@ -1,57 +1,49 @@
 # NASA-Battery-project
-# Battery Testing Data Analysis
 
-This repository contains analysis and insights derived from battery testing data.
+## Overview
 
-## Dataset Overview
+The dataset 'CS2_37_1_18_11.xlsx' contains information about a battery undergoing various testing procedures. It provides multiple parameters and measurements that can be utilized for understanding the battery's health, efficiency, and behavior during different steps and cycles of testing.
 
-The dataset 'CS2_37_1_18_11.xlsx' includes information about battery performance during testing. 
+### General Dataset Information
 
-### Columns Description
+- The dataset comprises 9871 entries and 17 columns representing different battery parameters.
+- Various features such as Test_Time, Date_Time, Step_Time, Current, Voltage, Capacity, Energy, and Resistance, among others, are included.
+- Initial inspection indicates no missing values and diverse data types, primarily float and integer types.
 
-- `Data_Point`: Sequential data index.
-- `Test_Time(s)`: Duration of the battery test in seconds.
-- `Date_Time`: Timestamp of the recorded data point.
-- `Step_Time(s)`: Duration of the current step within the test.
-- `Step_Index`: Numerical index for different test steps.
-- `Cycle_Index`: Numerical index representing specific cycles of the test.
-- `Current(A)`: Electric current flowing in or out of the battery.
-- `Voltage(V)`: Electric potential across the battery.
-- `Charge_Capacity(Ah)`: Capacity during the charging process.
-- `Discharge_Capacity(Ah)`: Capacity during the discharging process.
-- `Charge_Energy(Wh)`: Energy consumed or produced during charging.
-- `Discharge_Energy(Wh)`: Energy consumed or produced during discharging.
-- `dV/dt(V/s)`: Rate of voltage change over time.
-- `Internal_Resistance(Ohm)`: Battery's internal resistance.
+## Exploratory Data Analysis
 
-## Data Preprocessing
+### Battery Health Metric Calculation
 
-- Dropped columns related to insignificant data ('Is_FC_Data', 'AC_Impedance(Ohm)', 'ACI_Phase_Angle(Deg)').
-- Normalized features related to battery health.
+- Data normalization and feature weighting were applied to derive a 'Battery Health Metric.'
+- A histogram is plotted to depict the distribution of the calculated metric.
+- Categorized battery health status into 'Unhealthy,' 'Intermediate,' and 'Healthy.'
 
-## Battery Health Analysis
+### Battery Health Status Visualization
 
-Analyzed battery health metric based on specific features and their weights. Derived battery health statuses as 'Healthy,' 'Intermediate,' and 'Unhealthy' based on thresholds.
+- A pie chart visualizes the distribution of different battery health statuses.
 
-## Aggregations
+### Step and Cycle-Based Aggregations
 
-- Calculated step-based and cycle-based statistics for Voltage and Current.
+- Calculated statistical measures (mean, median, and standard deviation) of Voltage and Current for both steps and cycles.
+- Graphically represented step-based and cycle-based aggregations, illustrating the trends across different steps and cycles.
 
-## Discharge Efficiency
+### Discharge Efficiency Analysis
 
-Analyzed battery discharge efficiency based on 'Charge_Energy(Wh)' and 'Discharge_Energy(Wh)'. Visualized its distribution and time-series trends based on battery health status.
+- Discharge efficiency was computed from charge and discharge energy values.
+- A histogram was plotted to demonstrate the distribution of discharge efficiency.
 
-### Insights
-- The distribution of battery health status shows an even spread across health categories.
-- Discharge efficiency is within a diverse range, depicting varying performance.
+### Time-Series Analysis of Discharge Efficiency
 
-## Visualizations
+- Utilized time-series analysis to observe the discharge efficiency trends concerning battery health status over time.
+- Plotted these trends to visualize how discharge efficiency fluctuates concerning the battery's health status.
 
-The repository includes visualizations depicting trends and distributions of different battery-related metrics.
+## Insights and Observations
 
-## Repository Structure
+- The battery health metric calculation allowed for better understanding of battery health status.
+- Aggregations provided insights into step and cycle-based trends of voltage and current.
+- Discharge efficiency analysis revealed a distribution, showing the variance in efficiency measurements.
 
-- **Notebooks**: Jupyter notebooks with analysis code.
-- **Data**: Dataset used for the analysis.
-- **Visualizations**: Graphical representations of battery-related insights.
+## Conclusion
+
+The analysis provides a comprehensive understanding of the battery's health, efficiency, and behavior during testing procedures. The visualizations and calculations offer insights into the battery's performance, guiding further analysis or actions.
 
